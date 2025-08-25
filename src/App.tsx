@@ -29,13 +29,6 @@ const App = () => {
   const [newPlayerName, setNewPlayerName] = useState('');
   const [currentMap, setCurrentMap] = useState('Ascent');
 
-  const getRandomInteger = (min, max) => {
-    min = Math.ceil(min)
-    max = Math.floor(max)
-
-    return Math.floor(Math.random() * (max - min)) + min
-  }
-
   // Helper function to shuffle an array
   const shuffleArray = (array) => {
     const newArray = [...array];
@@ -105,9 +98,6 @@ const App = () => {
     'Sunset': sunset,
   };
 
-  // Construct the map image URL using the assets folder and map name
-  const mapImagePath = `./assets/Loading_Screen_${currentMap}.jpg`;
-
   // Function to add a new player to a team
   const handleAddPlayer = (team) => {
     // Check if the input name is not empty
@@ -160,6 +150,7 @@ const App = () => {
             alt={`Thumbnail for ${currentMap}`}
             className="mx-auto rounded-lg shadow-lg border border-gray-700/50 mb-4"
             onError={(e) => {
+              /** @ts-ignore */
               e.target.src = `https://placehold.co/300x150/2d3748/fff?text=${currentMap}`;
               console.error(`Failed to load image for map: ${currentMap}`);
             }}
@@ -217,6 +208,7 @@ const App = () => {
             teamName="ATTACKERS"
             players={attackers}
             onUpdatePlayer={handleUpdatePlayer}
+            onAddPlayer={handleAddPlayer}
           />
 
           {/* Defenders Team */}
@@ -224,6 +216,7 @@ const App = () => {
             teamName="DEFENDERS"
             players={defenders}
             onUpdatePlayer={handleUpdatePlayer}
+            onAddPlayer={{ handleAddPlayer }}
           />
         </div>
 

@@ -10,14 +10,11 @@ const Shield = (props) => (
 const User = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
 );
-const PlusCircle = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-);
-
 
 const TEAM_SIZE = 5;
 
 // Reusable component for a single player slot
+/** @ts-ignore */
 const PlayerSlot = ({ player, onAddPlayer, onUpdatePlayer, teamName }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedName, setEditedName] = useState(player?.name || '');
@@ -109,9 +106,11 @@ const TeamLayout = ({ teamName, players, onAddPlayer, onUpdatePlayer }) => {
             player={player}
             teamName={teamName}
             onUpdatePlayer={onUpdatePlayer}
+            onAddPlayer={onAddPlayer}
           />
         ))}
         {emptySlotsArray.map((_, index) => (
+          /** @ts-ignore */
           <PlayerSlot key={`empty-${index}`} onAddPlayer={() => onAddPlayer(teamName)} />
         ))}
       </div>
