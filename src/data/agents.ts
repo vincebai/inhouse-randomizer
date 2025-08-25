@@ -1,0 +1,37 @@
+export const smokes = [
+    'Astra',
+    'Brimstone',
+    'Clove',
+    'Harbor',
+    'Omen',
+    'Viper'
+]
+export const agents = [
+    'Astra',
+    'Breach',
+    'Brimstone',
+    'Chamber',
+    'Clove',
+    'Cypher',
+    'Deadlock',
+    'Fade',
+    'Gecko',
+    'Harbor',
+    'Iso',
+    'Jett',
+    'Kay/o',
+    'Killjoy',
+    'Neon',
+    'Omen',
+    'Phoenix',
+    'Raze',
+    'Reyna',
+    'Sage',
+    'Skye',
+    'Sova',
+    'Tejo',
+    'Viper',
+    'Vyse',
+    'Waylay',
+    'Yoru'
+]
