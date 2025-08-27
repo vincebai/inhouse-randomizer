@@ -3,8 +3,7 @@ export const smokes = [
     'Brimstone',
     'Clove',
     'Harbor',
-    'Omen',
-    'Viper'
+    'Omen'
 ]
 export const agents = [
     'Astra',
